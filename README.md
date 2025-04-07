@@ -25,6 +25,16 @@ To write a python program to perform stop and wait protocol
              c.close()
              break    
 
+             import socket
+             s=socket.socket()
+             s.connect(('localhost',9000))
+             while True:
+                 print(s.recv(1024).decode())
+                 s.send("Acknowledgement Received".encode())
+    
+
+
+
 
 ## OUTPUT
 ![Screenshot 2025-03-29 104616](https://github.com/user-attachments/assets/5396dfbe-2f25-4965-906f-d2746602b251)
