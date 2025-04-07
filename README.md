@@ -14,16 +14,16 @@ To write a python program to perform stop and wait protocol
      s.bind(('localhost',9000))
      s.listen()
      c,addr=s.accept()
-   while True:
-      i=input("Enter the Data:")
-      c.send(i.encode())
-      ack=(c.recv(1024).decode())
-     if ack:
-          print(ack)
-          continue
-     else:
-         c.close()
-         break    
+     while True:
+          i=input("Enter the Data:")
+          c.send(i.encode())
+          ack=(c.recv(1024).decode())
+          if ack:
+             print(ack)
+             continue
+          else:
+             c.close()
+             break    
 
 
 ## OUTPUT
